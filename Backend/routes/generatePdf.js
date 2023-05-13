@@ -62,7 +62,8 @@ router.route("/invoice/:orderNo/").get(async (req, res) => {
 
       products: prod,
       // The message you would like to display on the bottom of your invoice
-      "bottom-notice": "Kindly pay your invoice within 15 days.",
+      "bottom-notice":
+        "Fashion is like eating; You shouldn't stick to the same menu.",
       // Settings to customize your invoice
       settings: {
         currency: "INR",
