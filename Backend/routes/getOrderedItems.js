@@ -20,7 +20,7 @@ router.route("/getordereditems").post(async (req, res) => {
       }
 
       for (let itemid of ordervalues) {
-        const filteredArr = items.filter((item) => item.orderId === itemid);
+        const filteredArr = items.filter((item) => item.orderId == itemid);
         resArr.push({ orderId: itemid, filteredArr });
       }
     }
