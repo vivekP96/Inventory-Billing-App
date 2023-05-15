@@ -16,11 +16,15 @@ router.route("/getordereditems").post(async (req, res) => {
       itemcode = Number(itemcode[0].orderId);
 
       for (let i = 1; i < itemcode; i++) {
-        ordervalues.push(`ODNOSVSWH-00${i}`);
+        if (i < 10) {
+          ordervalues.push(`ODNOSVSWH-00${i}`);
+        } else if (i >= 10) {
+          ordervalues.push(`ODNOSVSWH-0${i}`);
+        }
       }
 
       for (let itemid of ordervalues) {
-        const filteredArr = items.filter((item) => item.orderId == itemid);
+        const filteredArr = items.filter((item) => item.orderId === itemid);
         resArr.push({ orderId: itemid, filteredArr });
       }
     }
